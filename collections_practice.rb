@@ -1,4 +1,4 @@
-require 'pry'
+
 
 def begins_with_r(arr)
 new_arr = []
