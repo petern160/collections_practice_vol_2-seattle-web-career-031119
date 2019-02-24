@@ -1,15 +1,13 @@
-
-
 def begins_with_r(arr)
-new_arr = []
+arr_list = []
   arr.each do |i|
     if i[0] == "r"
-      new_arr.push(true)
+      arr_list.push(true)
     else
-      new_arr.push(false)
+      arr_list.push(false)
     end
   end
-  if new_arr.include?(false)
+  if arr_list.include?(false)
     false
   else
     true
@@ -78,16 +76,12 @@ end
 def organize_schools(schools)
 organized_schools = {}
   schools.each do |name, location_hash|
-#binding.pry
     location = location_hash[:location]
-#binding.pry
     if organized_schools[location]
       organized_schools[location] << name
-#binding.pry
     else
       organized_schools[location] = []
       organized_schools[location] << name
-#binding.pry
     end
   end
   organized_schools
