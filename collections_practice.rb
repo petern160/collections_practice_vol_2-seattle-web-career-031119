@@ -53,21 +53,16 @@ def count_elements(arr)
    end.uniq
 end
 
-def merge_data(a, b)
-  new_arr = []
-    a.each do |key, val|
-      name = key[:first_name]
-#binding.pry
-      b.each do |person_name, person_data|
-        if person_name[name]
-          merged_person = person_name[name]
-          merged_person[:first_name] = name
-          new_arr << merged_person
-#binding.pry
-        end
-      end
+def merge_data(keys, data)
+  keys.each do |object|
+    matchingProperty = object[:first_name]
+    puts object
+    otherObject = data[0][matchingProperty]
+    
+    otherObject.each do |property,value|
+      object[property] = value
     end
-    new_arr
+  end
 end
 
 def find_cool(hash)
